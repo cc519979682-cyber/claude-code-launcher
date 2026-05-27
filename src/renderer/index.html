@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claude Code 图形启动器</title>
+    <link rel="stylesheet" href="../../node_modules/@xterm/xterm/css/xterm.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="sidebar">
+        <section class="panel">
+          <div class="section-title">服务商</div>
+          <div class="field-row">
+            <select id="providerSelect" aria-label="服务商"></select>
+            <button id="providerManageButton" class="icon-button" title="服务商管理">⚙</button>
+          </div>
+          <div id="providerHint" class="hint"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-title">模型</div>
+          <select id="modelSelect" aria-label="模型"></select>
+        </section>
+
+        <section class="panel">
+          <div class="section-title">项目文件夹</div>
+          <button id="projectButton" class="primary-button">选择项目文件夹</button>
+          <div id="projectPath" class="path-display"></div>
+          <div class="section-subtitle">最近项目</div>
+          <div id="recentProjects" class="recent-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-title">会话方式</div>
+          <div class="mode-grid">
+            <button class="mode-button active" data-mode="new">新建对话</button>
+            <button class="mode-button" data-mode="continue">继续上次</button>
+            <button class="mode-button" data-mode="resume">选择历史</button>
+          </div>
+          <label class="check-row">
+            <input type="checkbox" id="showAllSessions" />
+            <span>显示全部项目历史</span>
+          </label>
+          <div id="sessionList" class="session-list"></div>
+        </section>
+
+        <section class="panel status-panel">
+          <button id="startButton" class="primary-button">启动 Claude Code</button>
+          <button id="stopButton" class="secondary-button" disabled>停止</button>
+          <button id="restartButton" class="secondary-button" disabled>重启</button>
+          <div id="statusText" class="status-text">准备就绪</div>
+        </section>
+      </aside>
+
+      <section class="terminal-pane">
+        <div class="terminal-topbar">
+          <div>
+            <div class="terminal-title">Claude Code</div>
+            <div id="terminalMeta" class="terminal-meta">尚未启动</div>
+          </div>
+          <button id="clearTerminalButton" class="secondary-button compact">清空显示</button>
+        </div>
+        <div id="terminal"></div>
+      </section>
+    </main>
+
+    <dialog id="providerDialog">
+      <form method="dialog" class="dialog-body">
+        <div class="dialog-header">
+          <div>
+            <div class="dialog-title">服务商管理</div>
+            <div class="dialog-subtitle">配置支持 Anthropic 兼容接口的大模型 API</div>
+          </div>
+          <button class="icon-button" value="cancel" title="关闭">×</button>
+        </div>
+
+        <div class="provider-editor">
+          <div id="providerEditorList" class="provider-editor-list"></div>
+          <div class="provider-form">
+            <label>名称<input id="providerNameInput" /></label>
+            <label>接口地址<input id="providerBaseUrlInput" placeholder="https://example.com/anthropic" /></label>
+            <label>认证方式
+              <select id="providerAuthTypeInput">
+                <option value="apiKey">ANTHROPIC_API_KEY</option>
+                <option value="authToken">ANTHROPIC_AUTH_TOKEN</option>
+              </select>
+            </label>
+            <label>密钥环境变量<input id="providerEnvInput" placeholder="MY_API_KEY" /></label>
+            <label>模型列表<textarea id="providerModelsInput" rows="4" placeholder="每行一个模型名"></textarea></label>
+            <label>默认模型<input id="providerDefaultModelInput" /></label>
+            <label>轻量模型<input id="providerHaikuModelInput" /></label>
+            <label>子任务模型<input id="providerSubagentModelInput" /></label>
+            <div id="providerTestResult" class="hint"></div>
+            <div class="dialog-actions">
+              <button id="newProviderButton" type="button" class="secondary-button">新增</button>
+              <button id="deleteProviderButton" type="button" class="danger-button">删除</button>
+              <button id="testProviderButton" type="button" class="secondary-button">测试连接</button>
+              <button id="saveProvidersButton" type="button" class="primary-button">保存</button>
+              <button id="resetProvidersButton" type="button" class="secondary-button">恢复默认</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="../../node_modules/@xterm/xterm/lib/xterm.js"></script>
+    <script src="../../node_modules/@xterm/addon-fit/lib/addon-fit.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

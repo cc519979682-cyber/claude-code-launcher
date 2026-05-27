@@ -1,0 +1,38 @@
+[
+  {
+    "id": "mimo",
+    "name": "Mimo",
+    "baseUrl": "https://api.xiaomimimo.com/anthropic",
+    "authType": "apiKey",
+    "apiKeyEnv": "MIMO_API_KEY",
+    "defaultModel": "mimo-v2.5-pro",
+    "haikuModel": "mimo-v2.5",
+    "subagentModel": "mimo-v2.5",
+    "models": [
+      "mimo-v2.5-pro",
+      "mimo-v2.5",
+      "mimo-v2-pro"
+    ],
+    "extraEnv": {
+      "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+      "CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK": "1"
+    }
+  },
+  {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "baseUrl": "https://api.deepseek.com/anthropic",
+    "authType": "authToken",
+    "apiKeyEnv": "DEEPSEEK_API_KEY",
+    "defaultModel": "deepseek-v4-pro[1m]",
+    "haikuModel": "deepseek-v4-flash",
+    "subagentModel": "deepseek-v4-flash",
+    "models": [
+      "deepseek-v4-pro[1m]",
+      "deepseek-v4-flash"
+    ],
+    "extraEnv": {
+      "CLAUDE_CODE_EFFORT_LEVEL": "max"
+    }
+  }
+]
