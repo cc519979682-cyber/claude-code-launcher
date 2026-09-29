@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Code Launcher 界面结构示意</title>
+  <desc id="desc">根据项目界面代码绘制：左侧依次选择服务商、模型、项目文件夹和会话方式，右侧是内嵌终端。此图不是运行截图。</desc>
+  <defs>
+    <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfaf7"/>
+      <stop offset="1" stop-color="#eee9df"/>
+    </linearGradient>
+    <linearGradient id="terminal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1f27"/>
+      <stop offset="1" stop-color="#111318"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-15%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#25231f" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="720" fill="url(#canvas)"/>
+  <path d="M0 613h1200M1032 0v720M0 88h1200" fill="none" stroke="#ded9cf" stroke-width="1" opacity=".6"/>
+  <circle cx="1112" cy="102" r="118" fill="#dcefed" opacity=".7"/>
+  <circle cx="1120" cy="118" r="72" fill="#edf7f5" opacity=".7"/>
+
+  <rect x="48" y="42" width="57" height="57" rx="15" fill="#16736b"/>
+  <path d="m63 61 11 10-11 10M79 81h12" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <text x="124" y="63" fill="#16736b" font-family="Arial, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" letter-spacing="2">WINDOWS DESKTOP</text>
+  <text x="48" y="159" fill="#25231f" font-family="Arial, Microsoft YaHei, sans-serif" font-size="51" font-weight="700">Claude Code Launcher</text>
+  <text x="51" y="200" fill="#5e594f" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24">选好服务商、项目与会话，进入同一窗口的终端。</text>
+
+  <g filter="url(#shadow)">
+    <rect x="48" y="242" width="1104" height="399" rx="17" fill="#fff" stroke="#d8d3c7" stroke-width="2"/>
+    <path d="M65 242h1070a17 17 0 0 1 17 17v26H48v-26a17 17 0 0 1 17-17Z" fill="#f1eee7"/>
+    <circle cx="74" cy="263" r="6" fill="#d9a49b"/>
+    <circle cx="95" cy="263" r="6" fill="#e1c78d"/>
+    <circle cx="116" cy="263" r="6" fill="#9ac6b5"/>
+    <text x="600" y="270" fill="#706b62" font-family="Arial, Microsoft YaHei, sans-serif" font-size="15" text-anchor="middle">Claude Code 图形启动器</text>
+
+    <path d="M48 285h359v339a17 17 0 0 1-17 17H65a17 17 0 0 1-17-17Z" fill="#eee9df"/>
+    <path d="M407 285h745v339a17 17 0 0 1-17 17H407Z" fill="url(#terminal)"/>
+    <path d="M407 285h745v61H407Z" fill="#1b1f27"/>
+    <path d="M407 346h745" stroke="#343a45" stroke-width="2"/>
+    <text x="439" y="324" fill="#f2f4f8" font-family="Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">Claude Code</text>
+    <text x="1058" y="322" fill="#abb5c2" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" text-anchor="end">内嵌终端</text>
+
+    <rect x="66" y="301" width="323" height="52" rx="9" fill="#fff" stroke="#d8d3c7"/>
+    <circle cx="89" cy="327" r="13" fill="#dcefed"/>
+    <text x="89" y="333" fill="#0f5e58" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" text-anchor="middle">1</text>
+    <text x="113" y="334" fill="#25231f" font-family="Arial, Microsoft YaHei, sans-serif" font-size="19" font-weight="700">服务商与模型</text>
+    <path d="m353 322 6 6 6-6" fill="none" stroke="#706b62" stroke-width="2"/>
+
+    <rect x="66" y="363" width="323" height="52" rx="9" fill="#fff" stroke="#d8d3c7"/>
+    <circle cx="89" cy="389" r="13" fill="#dcefed"/>
+    <text x="89" y="395" fill="#0f5e58" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" text-anchor="middle">2</text>
+    <text x="113" y="396" fill="#25231f" font-family="Arial, Microsoft YaHei, sans-serif" font-size="19" font-weight="700">项目文件夹</text>
+    <path d="M349 382h17v13h-17z" fill="none" stroke="#706b62" stroke-width="2"/>
+
+    <rect x="66" y="425" width="323" height="52" rx="9" fill="#fff" stroke="#d8d3c7"/>
+    <circle cx="89" cy="451" r="13" fill="#dcefed"/>
+    <text x="89" y="457" fill="#0f5e58" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" text-anchor="middle">3</text>
+    <text x="113" y="458" fill="#25231f" font-family="Arial, Microsoft YaHei, sans-serif" font-size="19" font-weight="700">会话方式</text>
+    <path d="M349 451h17M357 443v16" stroke="#706b62" stroke-width="2"/>
+
+    <rect x="66" y="495" width="323" height="63" rx="11" fill="#16736b"/>
+    <text x="227" y="534" fill="#fff" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" text-anchor="middle">启动 Claude Code  →</text>
+    <text x="70" y="596" fill="#706b62" font-family="Arial, Microsoft YaHei, sans-serif" font-size="16">新建 · 继续上次 · 选择历史</text>
+
+    <text x="455" y="414" fill="#7fd4bf" font-family="Arial, Microsoft YaHei, sans-serif" font-size="44" font-weight="700">&gt;_</text>
+    <text x="454" y="465" fill="#f2f4f8" font-family="Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="700">从项目上下文开始</text>
+    <text x="456" y="507" fill="#b1bdc7" font-family="Arial, Microsoft YaHei, sans-serif" font-size="20">在窗口内与 Claude Code 会话</text>
+    <path d="M454 547h462" stroke="#3c4651" stroke-width="2"/>
+    <rect x="454" y="568" width="292" height="10" rx="5" fill="#3d5960"/>
+    <rect x="454" y="591" width="204" height="10" rx="5" fill="#31434a"/>
+    <rect x="764" y="568" width="12" height="26" rx="2" fill="#7fd4bf"/>
+  </g>
+  <text x="48" y="684" fill="#706b62" font-family="Arial, Microsoft YaHei, sans-serif" font-size="18">界面结构示意 · 根据项目源码绘制 · 非运行截图</text>
+</svg>
