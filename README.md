@@ -1,7 +1,6 @@
 # Claude Code Launcher
 
-一个面向中文用户的 Claude Code 图形启动器。它可以在一个桌面窗口里选择服务商、模型、项目文件夹和历史会话，然后直接启动 Claude Code。
-
+面向中文用户的 Windows 版 Claude Code 图形启动器。选择服务商与模型、项目文件夹和历史会话后，即可在内嵌终端启动 Claude Code；API Key 从系统环境变量读取。
 ## 功能
 
 - 图形化选择 Mimo、DeepSeek 或自定义 Anthropic 兼容服务商
